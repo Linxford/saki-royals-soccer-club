@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
               </Typography>
               <Typography variant="body2" color="common.white">
                 <Link
-                  to="https://github.com/Linxford "
+                  to="https://bio.link/linxford "
                   target="_blank"
                   style={{
                     textDecoration: 'none',
