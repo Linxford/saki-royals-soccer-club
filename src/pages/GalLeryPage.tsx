@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Card, CardMedia, Typography, Modal, Fade, Backdrop } from '@mui/material';
+import { Box, Grid, Card, CardMedia, Typography, Modal, Fade, Backdrop, useMediaQuery } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -26,6 +26,7 @@ const images = [
 const GalleryPage: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const [selectedImage, setSelectedImage] = React.useState<number | null>(null);
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleOpen = (index: number) => {
     setOpen(true);
@@ -72,6 +73,8 @@ const GalleryPage: React.FC = () => {
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
+              width: isMobile ? '90%' : 'auto',
+              maxWidth: isMobile ? 'none' : 600,
               bgcolor: 'background.default',
               boxShadow: 24,
               p: 4,
