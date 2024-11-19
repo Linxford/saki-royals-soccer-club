@@ -10,6 +10,7 @@ import {
   Drawer,
   List,
   ListItem,
+  Divider,
   useMediaQuery,
   useTheme,
   Box,
@@ -40,7 +41,7 @@ const Navbar: React.FC = () => {
     <List
       sx={{
         display: 'flex',
-        flexDirection: isMobile ? 'column' : 'row',
+        flexDirection: 'column',
         gap: isMobile ? 1 : 3,
         padding: isMobile ? 2 : 0,
       }}
@@ -50,8 +51,8 @@ const Navbar: React.FC = () => {
           key={link.path}
           disableGutters
           sx={{
-            width: isMobile ? '100%' : 'auto',
-            textAlign: isMobile ? 'center' : 'left',
+            width: '100%',
+            textAlign: 'center',
             padding: isMobile ? '10px 0' : 0,
           }}
         >
@@ -63,16 +64,12 @@ const Navbar: React.FC = () => {
               fontWeight: 'bold',
               letterSpacing: 1,
               textTransform: 'uppercase',
-              color: isMobile ? theme.palette.text.primary : theme.palette.background.paper,
-              background: isMobile
-                ? `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`
-                : 'none',
-              borderRadius: isMobile ? 2 : 0,
-              boxShadow: isMobile ? 4 : 0,
+              color: theme.palette.text.primary,
+              background: `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
+              borderRadius: 2,
+              boxShadow: 4,
               '&:hover': {
-                background: isMobile
-                  ? `linear-gradient(to right, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`
-                  : theme.palette.primary.dark,
+                background: `linear-gradient(to right, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
                 color: theme.palette.background.paper,
               },
             }}
@@ -165,18 +162,40 @@ const Navbar: React.FC = () => {
             },
           }}
         >
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              mb: 2,
-            }}
-          >
-            <IconButton onClick={handleDrawerToggle} sx={{ color: theme.palette.background.paper }}>
-              <CloseIcon />
-            </IconButton>
+          <Box>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              sx={{ mb: 2 }}
+            >
+              <Box display="flex" alignItems="center">
+                <img
+                  src="/images/sakiLogo-circle.png"
+                  alt="Saki Royals FC Logo"
+                  style={{ height: 40, marginRight: 10 }}
+                />
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{
+                    fontWeight: 'bold',
+                    letterSpacing: 1,
+                    textTransform: 'uppercase',
+                    color: theme.palette.background.paper,
+                  }}
+                >
+                  Saki Royals FC
+                </Typography>
+              </Box>
+              <IconButton onClick={handleDrawerToggle} sx={{ color: theme.palette.background.paper }}>
+                <CloseIcon />
+              </IconButton>
+            </Box>
+            <Divider sx={{ backgroundColor: theme.palette.background.paper, mb: 2 }} />
+            {renderNavLinks(true)}
+            <Divider sx={{ backgroundColor: theme.palette.background.paper, mt: 2 }} />
           </Box>
-          {renderNavLinks(true)}
         </Drawer>
       )}
     </>
