@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, TextField, Button, Grid, Alert } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const DonatePage: React.FC = () => {
   const [amount, setAmount] = useState('');
@@ -8,6 +9,7 @@ const DonatePage: React.FC = () => {
   const [isPaystackLoaded, setIsPaystackLoaded] = useState(false);
 
   const paystackPublicKey = 'pk_test_5b0a5416773b64583fa0540876c36c7dcaac69b7'; // Replace with your actual key
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Dynamically load Paystack script
@@ -50,10 +52,11 @@ const DonatePage: React.FC = () => {
     const handler = (window as any).PaystackPop.setup({
       key: paystackPublicKey,
       email,
-      amount: parseInt(amount) * 100 ,// Convert to GHS pesewa
+      amount: parseInt(amount) * 100, // Convert to GHS pesewa
       currency: 'GHS',
       callback: function (response: any) {
-        alert('Payment successful! Reference: ' + response.reference);
+        console.log('Payment successful! Reference: ', response.reference);
+        navigate('/thank-you'); // Redirect to Thank-You Page
       },
       onClose: function () {
         alert('Transaction was not completed, window closed.');

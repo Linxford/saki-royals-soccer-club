@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import GalleryPage from '../pages/GalLeryPage';
 import DonatePage from '../pages/DonatePage';
+import ThankYouPage from '../pages/ThankyouPage';
 
 // Lazy-loaded pages
 const HomePage = lazy(() => import('../pages/HomePage'));
@@ -44,6 +45,7 @@ export function AppRoutes() {
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/sponsor" element={<SponsorPage />} />
               <Route path="/donate" element={<DonatePage />} />
+              <Route path="/thank-you" element={<ThankYouPage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </Suspense>
