@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
-import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import {
   AppBar,
   Toolbar,
@@ -12,7 +13,7 @@ import {
   useMediaQuery,
   useTheme,
   Box,
-  Switch
+  Switch,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ColorModeContext } from '../../theme/ThemeContext';
@@ -22,7 +23,7 @@ const navLinks = [
   { title: 'Team', path: '/team' },
   { title: 'About', path: '/about' },
   { title: 'Sponsor', path: '/sponsor' },
-  { title: 'Contact', path: '/contact' }
+  { title: 'Contact', path: '/contact' },
 ];
 
 const Navbar: React.FC = () => {
@@ -40,9 +41,8 @@ const Navbar: React.FC = () => {
       sx={{
         display: 'flex',
         flexDirection: isMobile ? 'column' : 'row',
-        gap: 2,
+        gap: isMobile ? 1 : 3,
         padding: isMobile ? 2 : 0,
-        width: isMobile ? '300px' : 'auto'
       }}
     >
       {navLinks.map((link) => (
@@ -50,25 +50,31 @@ const Navbar: React.FC = () => {
           key={link.path}
           disableGutters
           sx={{
-            width: 'auto',
-            justifyContent: 'center',
-            padding: isMobile ? 2 : 0
+            width: isMobile ? '100%' : 'auto',
+            textAlign: isMobile ? 'center' : 'left',
+            padding: isMobile ? '10px 0' : 0,
           }}
         >
           <Button
             component={Link}
             to={link.path}
-            color="primary"
             onClick={isMobile ? handleDrawerToggle : undefined}
             sx={{
               fontWeight: 'bold',
               letterSpacing: 1,
               textTransform: 'uppercase',
-              backgroundColor: theme.palette.primary.main,
-              color: theme.palette.background.paper,
+              color: isMobile ? theme.palette.text.primary : theme.palette.background.paper,
+              background: isMobile
+                ? `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`
+                : 'none',
+              borderRadius: isMobile ? 2 : 0,
+              boxShadow: isMobile ? 4 : 0,
               '&:hover': {
-                backgroundColor: theme.palette.primary.dark
-              }
+                background: isMobile
+                  ? `linear-gradient(to right, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`
+                  : theme.palette.primary.dark,
+                color: theme.palette.background.paper,
+              },
             }}
           >
             {link.title}
@@ -85,32 +91,23 @@ const Navbar: React.FC = () => {
         sx={{
           backgroundColor: theme.palette.primary.main,
           color: theme.palette.background.paper,
-          borderBottom: `1px solid ${theme.palette.primary.dark}`
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
         }}
       >
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <Toolbar sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
           {isMobile && (
             <IconButton
               color="inherit"
               onClick={handleDrawerToggle}
               sx={{
-                color: theme.palette.background.paper
+                color: theme.palette.background.paper,
               }}
             >
-              {/* <img
-                src="MenuOpenIcon"
-                alt="Menu"
-                style={{ height: 24 }}
-              /> */}
-              <MenuOpenIcon />
+              <MenuIcon />
             </IconButton>
           )}
 
-          <Box
-            display="flex"
-            alignItems="center"
-            sx={{ flexGrow: 1 }}
-          >
+          <Box display="flex" alignItems="center" sx={{ flexGrow: 1 }}>
             <Link to="/">
               <img
                 src="/images/sakiLogo-circle.png"
@@ -122,7 +119,7 @@ const Navbar: React.FC = () => {
               to="/"
               style={{
                 textDecoration: 'none',
-                color: 'inherit'
+                color: 'inherit',
               }}
             >
               <Typography
@@ -132,7 +129,7 @@ const Navbar: React.FC = () => {
                   fontWeight: 'bold',
                   letterSpacing: 1,
                   textTransform: 'uppercase',
-                  color: theme.palette.background.paper
+                  color: theme.palette.background.paper,
                 }}
               >
                 Saki Royals FC
@@ -143,16 +140,11 @@ const Navbar: React.FC = () => {
           {!isMobile && renderNavLinks()}
 
           <Box display="flex" alignItems="center">
-            <IconButton
-              sx={{
-                color: theme.palette.background.paper
-              }}
-            >
-              <Switch
-                checked={theme.palette.mode === 'dark'}
-                onChange={colorMode.toggleColorMode}
-              />
-            </IconButton>
+            <Switch
+              checked={theme.palette.mode === 'dark'}
+              onChange={colorMode.toggleColorMode}
+              color="default"
+            />
           </Box>
         </Toolbar>
       </AppBar>
@@ -165,10 +157,25 @@ const Navbar: React.FC = () => {
           onClose={handleDrawerToggle}
           ModalProps={{ keepMounted: true }}
           sx={{
-            backgroundColor: theme.palette.primary.main,
-            color: theme.palette.background.paper
+            '.MuiDrawer-paper': {
+              backgroundColor: theme.palette.primary.main,
+              color: theme.palette.background.paper,
+              width: '75%',
+              padding: 2,
+            },
           }}
         >
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              mb: 2,
+            }}
+          >
+            <IconButton onClick={handleDrawerToggle} sx={{ color: theme.palette.background.paper }}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
           {renderNavLinks(true)}
         </Drawer>
       )}
