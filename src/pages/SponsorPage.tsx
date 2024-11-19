@@ -1,44 +1,46 @@
 import React, { useState } from 'react';
-import { Box, Typography, Grid, Button, Card, CardContent, CardMedia, CardActions, Modal } from '@mui/material';
-import { motion } from 'framer-motion';
+import { Box, Typography, Grid, Button, Card, CardContent, CardMedia, CardActions, Modal, Link } from '@mui/material';
 
 const sponsors = [
   {
     id: 1,
     name: 'Saki Royals FC',
-    logo: '../images/hero-background.jpg',
+    logo: '/images/hero-background.jpg', // Use public folder paths
     description: 'Our official football club',
-    cta: 'Support us'
+    cta: 'Support us',
   },
   {
     id: 2,
     name: 'Saki Sports',
-    logo: '../images/hero-background2.jpg',
+    logo: '/images/hero-background2.jpg',
     description: 'Our official sports partner',
-    cta: 'Visit website'
+    cta: 'Visit website',
   },
   {
     id: 3,
     name: 'Saki Foundation',
-    logo: '../images/sakiLogo.jpeg',
+    logo: '/images/sakiLogo.jpeg',
     description: 'Our official foundation partner',
-    cta: 'Donate now'
-  }
+    cta: 'Donate now',
+  },
 ];
 
 const SponsorPage: React.FC = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [openModal, setOpenModal] = useState(false);
 
   const handleCTAClick = (id: number) => {
     switch (id) {
       case 1:
-        setPhoneNumber('+233  548 522 077');
+        setPhoneNumber('+233 548 522 077');
+        setOpenModal(true);
         break;
       case 2:
-        window.open('/', '_blank');
+        window.open('https://sakisports.com', '_blank'); // Replace with actual URL
         break;
       case 3:
-        setPhoneNumber('+233  548 522 077');
+        setPhoneNumber('+233 548 522 077');
+        setOpenModal(true);
         break;
       default:
         break;
@@ -51,18 +53,20 @@ const SponsorPage: React.FC = () => {
         Our Sponsors
       </Typography>
       <Grid container spacing={4}>
-        {sponsors.map(sponsor => (
+        {sponsors.map((sponsor) => (
           <Grid item xs={12} md={4} key={sponsor.id}>
-            <Card sx={{
-              border: 2,
-              borderColor: 'primary.main',
-              borderRadius: 10,
-              boxShadow: 8,
-              '&:hover': {
-                borderColor: 'secondary.main',
-                boxShadow: 12,
-              }
-            }}>
+            <Card
+              sx={{
+                border: 2,
+                borderColor: 'primary.main',
+                borderRadius: 10,
+                boxShadow: 8,
+                '&:hover': {
+                  borderColor: 'secondary.main',
+                  boxShadow: 12,
+                },
+              }}
+            >
               <CardMedia
                 component="img"
                 alt={sponsor.name}
@@ -87,8 +91,8 @@ const SponsorPage: React.FC = () => {
         ))}
       </Grid>
       <Modal
-        open={!!phoneNumber}
-        onClose={() => setPhoneNumber('')}
+        open={openModal}
+        onClose={() => setOpenModal(false)}
         aria-labelledby="contact-modal-title"
         aria-describedby="contact-modal-description"
       >
@@ -111,9 +115,12 @@ const SponsorPage: React.FC = () => {
             Contact Us
           </Typography>
           <Typography id="contact-modal-description" variant="body2" color="text.secondary">
-            Call us at {phoneNumber} to donate now.
+            Call us at {phoneNumber} to donate now or visit our{' '}
+            <Link href="/donate" underline="hover">
+              Donate Page
+            </Link>
           </Typography>
-          <Button onClick={() => setPhoneNumber('')} sx={{ mt: 2, color: 'primary.main' }}>
+          <Button onClick={() => setOpenModal(false)} sx={{ mt: 2, color: 'primary.main' }}>
             Close
           </Button>
         </Box>
