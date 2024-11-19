@@ -97,6 +97,19 @@ const Footer: React.FC = () => {
               <Typography variant="body2" color="common.white">
                 All Rights Reserved
               </Typography>
+              <Typography variant="body2" color="common.white">
+                <Link
+                  to="https://github.com/Linxford "
+                  target="_blank"
+                  style={{
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
+                >
+                  Crafted with 🩵 by{' '}
+                  <span style={{ color: 'lightblue' }}>Linxford Kwabena</span>
+                </Link>
+              </Typography>
             </Box>
           </Grid>
         </Grid>
