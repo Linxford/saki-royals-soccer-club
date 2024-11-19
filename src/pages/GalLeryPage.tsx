@@ -77,7 +77,7 @@ const GalleryPage: React.FC = () => {
               maxWidth: isMobile ? 'none' : 600,
               bgcolor: 'background.default',
               boxShadow: 24,
-              p: 4,
+              p: 1,
               border: '1px solid #C41E3A',
             }}>
               {selectedImage !== null && (
