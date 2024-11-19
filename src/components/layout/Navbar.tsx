@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ColorModeContext } from '../../theme/ThemeContext';
+import { inherits } from 'util';
 
 const navLinks = [
   { title: 'Home', path: '/' },
@@ -37,13 +38,14 @@ const Navbar: React.FC = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const renderNavLinks = (isMobile = false) => (
+  const renderNavLinks = (isMobile: boolean) => (
     <List
       sx={{
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: isMobile ? 'column' : 'row',
         gap: isMobile ? 1 : 3,
         padding: isMobile ? 2 : 0,
+        alignItems: isMobile ? 'flex-start' : 'center',
       }}
     >
       {navLinks.map((link) => (
@@ -51,8 +53,8 @@ const Navbar: React.FC = () => {
           key={link.path}
           disableGutters
           sx={{
-            width: '100%',
-            textAlign: 'center',
+            width: isMobile ? '100%' : 'auto',
+            textAlign: isMobile ? 'center' : 'left',
             padding: isMobile ? '10px 0' : 0,
           }}
         >
@@ -64,13 +66,13 @@ const Navbar: React.FC = () => {
               fontWeight: 'bold',
               letterSpacing: 1,
               textTransform: 'uppercase',
-              color: theme.palette.text.primary,
-              background: `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
+              color: isMobile ? theme.palette.text.primary : theme.palette.background.paper,
+              background: isMobile
+                ? `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`
+                : 'none',
               borderRadius: 2,
-              boxShadow: 4,
               '&:hover': {
-                background: `linear-gradient(to right, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
-                color: theme.palette.background.paper,
+                backgroundColor: isMobile ? theme.palette.primary.dark : theme.palette.action.hover,
               },
             }}
           >
@@ -126,7 +128,7 @@ const Navbar: React.FC = () => {
                   fontWeight: 'bold',
                   letterSpacing: 1,
                   textTransform: 'uppercase',
-                  color: theme.palette.background.paper,
+                  color: 'inherit',
                 }}
               >
                 Saki Royals FC
@@ -134,7 +136,7 @@ const Navbar: React.FC = () => {
             </Link>
           </Box>
 
-          {!isMobile && renderNavLinks()}
+          {!isMobile && renderNavLinks(false)}
 
           <Box display="flex" alignItems="center">
             <Switch
