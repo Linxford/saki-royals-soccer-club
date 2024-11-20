@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography, TextField, Button, Grid, Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { PayStack_Key } from '../utils/helpers';
+import { channel } from 'diagnostics_channel';
 
 const DonatePage: React.FC = () => {
   const [amount, setAmount] = useState('');
@@ -53,6 +54,7 @@ const DonatePage: React.FC = () => {
       email,
       amount: parseInt(amount) * 100, // Convert to GHS pesewa
       currency: 'GHS',
+      channel: ['mobile_money'],
       callback: function (response: any) {
         console.log('Payment successful! Reference: ', response.reference);
         navigate('/thank-you'); // Redirect to Thank-You Page
