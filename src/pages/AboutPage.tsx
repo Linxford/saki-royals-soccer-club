@@ -16,13 +16,13 @@ import {
 import { motion } from 'framer-motion';
 
 const AboutPage: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+//   const currentYear = new Date().getFullYear();
 
   const clubHistory = [
-    { year: 1995, event: 'Club Founded' },
-    { year: 2005, event: 'First League Championship' },
-    { year: 2012, event: 'Youth Academy Established' },
-    { year: 2020, event: 'New Training Facility Opened' }
+    { year: 2023, event: 'Club Founded' },
+    { year: 2023 , event: 'First League Championship' },
+    { year: 2023, event: 'Youth Academy Established' },
+    { year: 2024, event: 'New Training Facility Opened' }
   ];
 
   return (

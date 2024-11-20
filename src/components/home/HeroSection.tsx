@@ -15,6 +15,9 @@ const HeroSection: React.FC = () => {
   return (
     <Box
       sx={{
+        borderRadius: 2,
+        border: '2px solid',
+        // borderColor: 'linear-gradient( #000, #da291c, #008000)',
         position: 'relative',
         height: '80vh',
         display: 'flex',

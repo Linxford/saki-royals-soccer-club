@@ -5,7 +5,7 @@ import {
   Grid,
   Card,
   CardContent,
-  CardMedia
+  CardMedia,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/home/HeroSection';
@@ -15,7 +15,8 @@ import GalleryPage from './GalLeryPage';
 
 const HomePage: React.FC = () => {
   return (
-    <Box sx={{ backgroundColor: '#f4f4f4', padding: 2 }}>
+    <Box sx={{padding: 2 }}>
+
       <HeroSection />
 
       <Box my={4}>

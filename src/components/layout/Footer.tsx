@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
             >
               <Link to="/">
                 <img
-                  src="/images/sakiLogo-circle.png"
+                  src="/images/sakiLogoCircle.png"
                   alt="Saki Royals FC Logo"
                   style={{ height: 40, marginRight: 10 }}
                 />

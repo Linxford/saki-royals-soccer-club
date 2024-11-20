@@ -7,10 +7,11 @@ import {
   Button,
   Paper,
   Alert,
-  styled
+  styled,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Facebook, Twitter, Instagram, YouTube } from '@mui/icons-material';
+import { Club_Email, Club_WhatsApp_Number } from '../utils/helpers';
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -18,13 +19,17 @@ const ContactPage: React.FC = () => {
     email: '',
     message: '',
     phoneNumber: '',
-    location: ''
+    location: '',
   });
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent, method: 'whatsapp' | 'email') => {
@@ -50,7 +55,7 @@ const ContactPage: React.FC = () => {
   };
 
   const StyledPaper = styled(Paper)(({ theme }) => ({
-    border: `2px solid ${theme.palette.primary.main}`
+    border: `2px solid ${theme.palette.primary.main}`,
   }));
 
   return (
@@ -71,11 +76,11 @@ const ContactPage: React.FC = () => {
                 Contact Information
               </Typography>
               <Typography variant="body1">
-                <strong>Address:</strong> Ghana (Greater Accra Region ) Tema-Saki
-                <br />
-                <strong>Phone:</strong> +233  548 522 077
-                <br />
-                <strong>Email:</strong> royalsoccerclub15@gmail.com
+                    <strong>Address:</strong> Ghana (Greater Accra Region ) Tema-Saki
+               <br />
+           <strong>Phone:</strong> {Club_WhatsApp_Number}
+             <br />
+              <strong>Email:</strong> {Club_Email}
               </Typography>
             </StyledPaper>
           </motion.div>
@@ -91,21 +96,8 @@ const ContactPage: React.FC = () => {
               <Typography variant="h6" gutterBottom>
                 Social Media
               </Typography>
-              <Box
-                display="flex"
-                justifyContent="space-around"
-                flexWrap="wrap"
-                sx={{
-                  '& button': {
-                    m: 1,
-                    flex: '1 0 calc(50% - 8px)',
-                    // [theme.breakpoints.up('md')]: {
-                    //   flex: '1 0 calc(25% - 8px)'
-                    // }
-                  }
-                }}
-              >
-                {['Facebook', 'Twitter', 'Instagram', 'YouTube'].map(platform => (
+              <Box display="flex" justifyContent="space-around" flexWrap="wrap">
+                {['Facebook', 'Twitter', 'Instagram', 'YouTube'].map((platform) => (
                   <Button
                     key={platform}
                     variant="outlined"
@@ -115,26 +107,19 @@ const ContactPage: React.FC = () => {
                         Facebook: <Facebook />,
                         Twitter: <Twitter />,
                         Instagram: <Instagram />,
-                        YouTube: <YouTube />
+                        YouTube: <YouTube />,
                       }[platform]
                     }
                     onClick={() => {
-                      let url;
-                      switch (platform) {
-                        case 'Facebook':
-                          url = 'https://www.facebook.com/Saki-Royals-FC-115134537178261';
-                          break;
-                        case 'Twitter':
-                          url = 'https://twitter.com/SakiRoyalsFC';
-                          break;
-                        case 'Instagram':
-                          url = 'https://www.instagram.com/sakiroysalsfc/';
-                          break;
-                        case 'YouTube':
-                          url = 'https://www.youtube.com/channel/UCe6hJFqzK2aXwv8Jd4f6wzw';
-                          break;
-                      }
-                      window.open(url, '_blank');
+                      const urls: Record<string, string> = {
+                        Facebook:
+                          'https://www.facebook.com/Saki-Royals-FC-115134537178261',
+                        Twitter: 'https://twitter.com/SakiRoyalsFC',
+                        Instagram: 'https://www.instagram.com/sakiroysalsfc/',
+                        YouTube:
+                          'https://www.youtube.com/channel/UCe6hJFqzK2aXwv8Jd4f6wzw',
+                      };
+                      window.open(urls[platform], '_blank');
                     }}
                   >
                     {platform}
@@ -227,16 +212,12 @@ const ContactPage: React.FC = () => {
                 </Grid>
                 {submitStatus === 'success' && (
                   <Grid item xs={12}>
-                    <Alert severity="success">
-                      Message sent successfully!
-                    </Alert>
+                    <Alert severity="success">Message sent successfully!</Alert>
                   </Grid>
                 )}
                 {submitStatus === 'error' && (
                   <Grid item xs={12}>
-                    <Alert severity="error">
-                      Failed to send message. Please try again.
-                    </Alert>
+                    <Alert severity="error">Failed to send message. Please try again.</Alert>
                   </Grid>
                 )}
               </Grid>
@@ -249,3 +230,18 @@ const ContactPage: React.FC = () => {
 };
 
 export default ContactPage;
+
+
+
+
+
+
+        //         <strong>Address:</strong> Ghana (Greater Accra Region ) Tema-Saki
+        //         <br />
+        //         <strong>Phone:</strong> {Club_WhatsApp_Number}
+        //         <br />
+        //         <strong>Email:</strong> {Club_Email}
+        //       </Typography>
+        //     </StyledPaper>
+        //   </motion.div>
+        // </Grid>

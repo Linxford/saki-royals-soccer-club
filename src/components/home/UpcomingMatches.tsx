@@ -4,7 +4,7 @@ import {
   Typography,
   Grid,
   Paper,
-  Divider
+  Divider,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 
@@ -17,6 +17,7 @@ interface Match {
 }
 
 const UpcomingMatches: React.FC = () => {
+
   const matches: Match[] = [
     {
       date: '2024-05-15',
@@ -70,7 +71,8 @@ const UpcomingMatches: React.FC = () => {
                   borderRadius: 2,
                   border: '2px solid',
                   borderColor: '#C41E3A',
-                  backgroundColor: '#f4f4f4'
+                //   backgroundColor: '#f4f4f4'
+
                 }}
               >
                 <Typography variant="h6" gutterBottom sx={{ color: '#1B5E20' }}>
@@ -96,4 +98,3 @@ const UpcomingMatches: React.FC = () => {
 };
 
 export default UpcomingMatches;
-

@@ -1,20 +1,20 @@
 import React from 'react';
-import { Box, Grid, Card, CardMedia, Typography, Modal, Fade, Backdrop, useMediaQuery } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Box, Grid, Card, CardMedia, Typography, Modal, Fade, Backdrop, useMediaQuery , useTheme} from '@mui/material';
+import {  ThemeProvider } from '@mui/material/styles';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#C41E3A',
-    },
-    secondary: {
-      main: '#1B5E20',
-    },
-    background: {
-      default: '#f4f4f4',
-    },
-  },
-});
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       main: '#C41E3A',
+//     },
+//     secondary: {
+//       main: '#1B5E20',
+//     },
+//     background: {
+//       default: '#f4f4f4',
+//     },
+//   },
+// });
 
 const images = [
   { title: 'Image 1', src: '../images/sakiLogo.jpeg', description: 'This is a description of the first image', date: '2022-01-01' },
@@ -24,6 +24,7 @@ const images = [
 ];
 
 const GalleryPage: React.FC = () => {
+    const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [selectedImage, setSelectedImage] = React.useState<number | null>(null);
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));

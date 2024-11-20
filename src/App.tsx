@@ -35,6 +35,8 @@ import {
     isValidEmail,
     generateSlug,
     APP_NAME,
+    Developer,
+    Developer_Contact,
   } from "../src/utils/helpers";
 
 function App() {
@@ -48,9 +50,7 @@ function App() {
 export default App;
 
 
-  console.log(formatDate(new Date())); // Outputs: '2024-11-19'
-  console.log(capitalizeFirstLetter("hello")); // Outputs: 'Hello'
-  console.log(calculateAge(new Date("2000-01-01"))); // Outputs: 24 (or current age based on the year)
-  console.log(isValidEmail("test@example.com")); // Outputs: true
-  console.log(generateSlug("Saki Royals Soccer Club")); // Outputs: 'saki-royals-soccer-club'
-  console.log(`Welcome to ${APP_NAME}`); // Outputs: 'Welcome to Saki Royals Soccer Club'
+  console.log(formatDate(new Date()));
+  console.log(`Welcome to ${APP_NAME}`);
+  console.log(`Developed by 👉 ${Developer}`);
+  console.log(`Developeer Contact 👉 ${Developer_Contact}`);

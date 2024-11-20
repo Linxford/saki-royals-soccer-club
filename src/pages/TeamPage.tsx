@@ -10,7 +10,7 @@ import {
   Select,
   MenuItem,
   FormControl,
-  InputLabel
+  InputLabel,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 
@@ -96,8 +96,8 @@ const TeamPage: React.FC = () => {
   const positions = ['All', ...Array.from(new Set(players.map(p => p.position)) as Set<string>)];
 
   return (
-    <Box sx={{ padding: 4, backgroundColor: '#f0f0f0' }}>
-      <Typography variant="h4" align="center" gutterBottom sx={{ color: '#C41E3A' }}>
+    <Box sx={{ padding: 4}}>
+      <Typography variant="h4" align="center" gutterBottom sx={{ color: '#C41E3A' }} >
         Our Team
       </Typography>
 
