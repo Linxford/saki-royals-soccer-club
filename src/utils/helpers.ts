@@ -3,8 +3,9 @@ export const APP_NAME = "Saki Royals Soccer Club";
 export const APP_VERSION = "1.0.0";
 export const Club_WhatsApp_Number = "233 548 522 077";
 export const Club_Email = "royalsoccerclub15@gmail.com";
-export const Developer="Linxford Kwabena";
-export const Developer_Contact="0249771777 or 0542979998";
+export const Developer = "Linxford Kwabena";
+export const Developer_Contact = "0249771777 or 0542979998";
+export const PayStack_Key = "pk_test_5b0a5416773b64583fa0540876c36c7dcaac69b7";
 
 
 // Format a date to 'YYYY-MM-DD'

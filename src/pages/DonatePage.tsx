@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, TextField, Button, Grid, Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { PayStack_Key } from '../utils/helpers';
 
 const DonatePage: React.FC = () => {
   const [amount, setAmount] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [isPaystackLoaded, setIsPaystackLoaded] = useState(false);
-
-  const paystackPublicKey = 'pk_test_5b0a5416773b64583fa0540876c36c7dcaac69b7'; // Replace with your actual key
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,7 +49,7 @@ const DonatePage: React.FC = () => {
     }
 
     const handler = (window as any).PaystackPop.setup({
-      key: paystackPublicKey,
+      key: PayStack_Key,
       email,
       amount: parseInt(amount) * 100, // Convert to GHS pesewa
       currency: 'GHS',

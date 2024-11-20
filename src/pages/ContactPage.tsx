@@ -36,7 +36,7 @@ const ContactPage: React.FC = () => {
     e.preventDefault();
     try {
       if (method === 'whatsapp') {
-        const url = `https://wa.me/233548522077?text=${encodeURIComponent(
+        const url = `https://wa.me/{Club_WhatsApp_Number}?text=${encodeURIComponent(
           `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}\nLocation: ${formData.location}`
         )}`;
         window.open(url);
