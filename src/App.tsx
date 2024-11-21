@@ -30,10 +30,6 @@ import { ThemeContextProvider } from './theme/ThemeContext';
 import { AppRoutes } from './routing/AppRoutes';
 import {
     formatDate,
-    capitalizeFirstLetter,
-    calculateAge,
-    isValidEmail,
-    generateSlug,
     APP_NAME,
     Developer,
     Developer_Contact,
