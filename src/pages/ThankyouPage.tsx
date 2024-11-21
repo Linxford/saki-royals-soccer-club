@@ -21,7 +21,7 @@ const ThankYouPage: React.FC = () => {
         Thank You for Your Donation!
       </Typography>
       <Typography variant="body1" sx={{ mb: 3 }}>
-        Your support means a lot to us. Together, we can achieve more for Saki Royals FC!
+        Your support means a lot to us. Together, we can achieve more for Saki Royals SC!
       </Typography>
       <Button
         variant="contained"

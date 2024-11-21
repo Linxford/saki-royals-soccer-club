@@ -4,7 +4,7 @@ import { Box, Typography, Grid, Button, Card, CardContent, CardMedia, CardAction
 const sponsors = [
   {
     id: 1,
-    name: 'Saki Royals FC',
+    name: 'Saki Royals SC',
     logo: '/images/hero-background.jpg', // Use public folder paths
     description: 'Our official football club',
     cta: 'Support us',

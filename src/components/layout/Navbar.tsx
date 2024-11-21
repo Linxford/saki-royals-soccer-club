@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
             <Link to="/">
               <img
                 src="/images/sakiLogoCircle.png"
-                alt="Saki Royals FC Logo"
+                alt="Saki Royals SC Logo"
                 style={{ height: 40, marginRight: 10 }}
               />
             </Link>
@@ -131,7 +131,7 @@ const Navbar: React.FC = () => {
                   color: 'inherit',
                 }}
               >
-                Saki Royals FC
+                Saki Royals SC
               </Typography>
             </Link>
           </Box>
@@ -174,7 +174,7 @@ const Navbar: React.FC = () => {
               <Box display="flex" alignItems="center">
                 <img
                   src="/images/sakiLogoCircle.png"
-                  alt="Saki Royals FC Logo"
+                  alt="Saki Royals SC Logo"
                   style={{ height: 40, marginRight: 10 }}
                 />
                 <Typography
@@ -187,7 +187,7 @@ const Navbar: React.FC = () => {
                     color: theme.palette.background.paper,
                   }}
                 >
-                  Saki Royals FC
+                  Saki Royals SC
                 </Typography>
               </Box>
               <IconButton onClick={handleDrawerToggle} sx={{ color: theme.palette.background.paper }}>

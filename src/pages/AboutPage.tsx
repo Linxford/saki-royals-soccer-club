@@ -28,7 +28,7 @@ const AboutPage: React.FC = () => {
   return (
     <Box sx={{ bgcolor: 'background.paper', p: 4 }}>
       <Typography variant="h4" align="center" gutterBottom color="primary">
-        About Saki Royals FC
+        About Saki Royals SC
       </Typography>
 
       <Grid container spacing={4}>

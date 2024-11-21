@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
               <Link to="/">
                 <img
                   src="/images/sakiLogoCircle.png"
-                  alt="Saki Royals FC Logo"
+                  alt="Saki Royals SC Logo"
                   style={{ height: 40, marginRight: 10 }}
                 />
               </Link>
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
                     textTransform: 'uppercase',
                   }}
                 >
-                  Saki Royals FC
+                  Saki Royals SC
                 </Typography>
               </Link>
             </Box>
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
           <Grid item xs={12} md={4} container justifyContent={{ xs: 'center', md: 'flex-end' }}>
             <Box>
               <Typography variant="body2" color="common.white">
-                © {new Date().getFullYear()} Saki Royals FC
+                © {new Date().getFullYear()} Saki Royals SC
               </Typography>
               <Typography variant="body2" color="common.white">
                 All Rights Reserved

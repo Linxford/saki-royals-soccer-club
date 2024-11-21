@@ -70,7 +70,7 @@ const DonatePage: React.FC = () => {
   return (
     <Box sx={{ padding: 4, maxWidth: 600, mx: 'auto' }}>
       <Typography variant="h4" align="center" gutterBottom>
-        Donate to Saki Royals FC
+        Donate to Saki Royals SC
       </Typography>
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
       <Grid container spacing={2}>

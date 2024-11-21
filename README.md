@@ -47,7 +47,7 @@ To learn React, check out the [React documentation](https://reactjs.org/). -->
 
 ## Project Overview
 
-This project is a web application for "Saki Royals FC", a soccer club. It is developed using React, a widely-used JavaScript library for crafting user interfaces. The application encompasses multiple pages, such as a home page, about page, contact page, among others.
+This project is a web application for "Saki Royals SC", a soccer club. It is developed using React, a widely-used JavaScript library for crafting user interfaces. The application encompasses multiple pages, such as a home page, about page, contact page, among others.
 
 ### About Page
 

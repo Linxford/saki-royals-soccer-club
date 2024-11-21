@@ -61,7 +61,7 @@ const ContactPage: React.FC = () => {
   return (
     <Box>
       <Typography variant="h4" align="center" gutterBottom>
-        Contact Saki Royals FC
+        Contact Saki Royals SC
       </Typography>
 
       <Grid container spacing={4}>
