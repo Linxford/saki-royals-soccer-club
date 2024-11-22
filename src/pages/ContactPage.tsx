@@ -36,12 +36,12 @@ const ContactPage: React.FC = () => {
     e.preventDefault();
     try {
       if (method === 'whatsapp') {
-        const url = `https://wa.me/{Club_WhatsApp_Number}?text=${encodeURIComponent(
+        const url = `https://wa.me/${Club_WhatsApp_Number}?text=${encodeURIComponent(
           `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}\nLocation: ${formData.location}`
         )}`;
         window.open(url);
       } else if (method === 'email') {
-        const mailtoLink = `mailto:royalsoccerclub15@gmail.com?subject=Contact%20Form%20Submission&body=${encodeURIComponent(
+        const mailtoLink = `mailto:${Club_Email}?subject=Contact%20Form%20Submission&body=${encodeURIComponent(
           `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}\nLocation: ${formData.location}`
         )}`;
         window.location.href = mailtoLink;

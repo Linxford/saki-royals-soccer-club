@@ -17,9 +17,19 @@ import {  ThemeProvider } from '@mui/material/styles';
 // });
 
 const images = [
-  { title: 'Image 1', src: '../images/sakiLogo.jpeg', description: 'This is a description of the first image', date: '2022-01-01' },
-  { title: 'Image 2', src: '../images/sakiLogo.jpeg', description: 'This is a description of the second image', date: '2022-01-15' },
-  { title: 'Image 3', src: '../images/sakiLogo.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 1', src: '../images/team1.jpeg', description: 'This is a description of the first image', date: '2022-01-01' },
+  { title: 'Image 2', src: '../images/team2.jpeg', description: 'This is a description of the second image', date: '2022-01-15' },
+  { title: 'Image 3', src: '../images/team3.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 4', src: '../images/team4.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 5', src: '../images/team5.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 6', src: '../images/team6.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 7', src: '../images/team7.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 8', src: '../images/team8.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 9', src: '../images/team9.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 10', src: '../images/team10.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 11', src: '../images/team11.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+  { title: 'Image 12', src: '../images/team12.jpeg', description: 'This is a description of the third image', date: '2022-02-01' },
+
   // Add more images as needed
 ];
 

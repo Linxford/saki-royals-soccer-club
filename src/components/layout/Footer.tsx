@@ -12,6 +12,7 @@ import {
   YouTube
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import { Developer_Url } from '../../utils/helpers';
 
 const Footer: React.FC = () => {
   return (
@@ -99,7 +100,7 @@ const Footer: React.FC = () => {
               </Typography>
               <Typography variant="body2" color="common.white">
                 <Link
-                  to="https://bio.link/linxford "
+                  to={Developer_Url}
                   target="_blank"
                   style={{
                     textDecoration: 'none',

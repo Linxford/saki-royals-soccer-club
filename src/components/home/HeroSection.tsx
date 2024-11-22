@@ -89,6 +89,27 @@ const HeroSection: React.FC = () => {
             Learn More
           </Button>
         </Box>
+        <Box
+         display="flex"
+         paddingTop={2}
+         justifyContent="center"
+         gap={2}
+       >
+
+        <Button
+            variant="contained"
+            color="success"
+            size="large"
+            component={motion.button}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => {
+              window.open('/donate', '_self');
+            }}
+          >
+               Donate To Support Us
+          </Button>
+        </Box>
       </motion.div>
     </Box>
   );

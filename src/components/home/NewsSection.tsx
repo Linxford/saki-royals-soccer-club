@@ -41,7 +41,7 @@ const NewsSection: React.FC = () => {
     },
     {
       title: 'New Training Facility',
-      summary: 'State-of-the-art training center opens this month',
+      summary: 'State-of-the-art training center to be opened in the near future',
       image: '../images/sakiLogo.jpeg',
       date: '2024-04-25'
     }
