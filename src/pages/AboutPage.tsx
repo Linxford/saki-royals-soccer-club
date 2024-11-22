@@ -19,10 +19,10 @@ const AboutPage: React.FC = () => {
 //   const currentYear = new Date().getFullYear();
 
   const clubHistory = [
-    { year: 2023, event: 'Club Founded' },
-    { year: 2023 , event: 'First League Championship' },
-    { year: 2023, event: 'Youth Academy Established' },
-    { year: 2024, event: 'New Training Facility Opened' }
+    { year: 2024, event: 'Club Founded' },
+    // { year: 2023 , event: 'First League Championship' },
+    // { year: 2023, event: 'Youth Academy Established' },
+    // { year: 2024, event: 'New Training Facility Opened' }
   ];
 
   return (

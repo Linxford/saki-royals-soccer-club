@@ -50,6 +50,16 @@ const leaders: Player[] = [
     image: '../images/sakiLogo.jpeg',
     stats: { goals: 10, assists: 5, matchesPlayed: 20 }
   },
+  {
+    id: 2,
+    name: 'Fatima Yakubu ',
+    number: 12,
+    position: 'Sponsor',
+    age: 28,
+    nationality: 'Ghanaian',
+    image: '../images/sakiLogo.jpeg',
+    stats: { goals: 10, assists: 5, matchesPlayed: 20 }
+  },
 ];
 
 const TeamPage: React.FC = () => {
@@ -58,33 +68,33 @@ const TeamPage: React.FC = () => {
   const players: Player[] = [
     {
       id: 1,
-      name: 'John Smith',
+      name: 'Kwame Donkoh',
       number: 10,
       position: 'Defender',
-      age: 27,
+      age: 18,
       nationality: 'Ghanaian',
       image: '../images/sakiLogo.jpeg',
-      stats: { goals: 15, assists: 8, matchesPlayed: 25 }
+      stats: { goals: 10, assists: 4, matchesPlayed: 9 }
     },
     {
         id: 1,
-        name: 'John Smith',
-        number: 27,
+        name: 'Alfred Wissie',
+        number: 4,
         position: 'Striker',
-        age: 27,
+        age: 17,
         nationality: 'Ghanaian',
         image: '../images/sakiLogo.jpeg',
-        stats: { goals: 15, assists: 8, matchesPlayed: 25 }
+        stats: { goals: 10, assists: 5, matchesPlayed: 9 }
       },
       {
         id: 1,
-        name: 'John Smith',
+        name: 'Afful Richmond',
         number: 12,
         position: 'Forward',
-        age: 27,
+        age: 18,
         nationality: 'Ghanaian',
         image: '../images/sakiLogo.jpeg',
-        stats: { goals: 15, assists: 8, matchesPlayed: 25 }
+        stats: { goals: 10, assists: 5, matchesPlayed: 9 }
       },
     // Add more players here
   ];
