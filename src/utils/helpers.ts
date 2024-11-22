@@ -11,7 +11,7 @@ export const Club_Youtube = "https://www.youtube.com/@royalsoccerclub15";
 export const Club_Tiktok = "https://www.tiktok.com/@royalsoccerclub15";
 
 export const Developer = "Linxford Kwabena";
-export const Developer_Url = "https://bio.link/linxford ";
+export const Developer_Url = "https://linxford.vercel.app/";
 export const Developer_Contact = "0249771777 or 0542979998";
 export const PayStack_Key = "pk_live_37631ff985db75002f885d950579dd8c194c9a60";
 
